@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gfuncs"
+version = "0.0.1"
+authors = [
+  { name="Marcus Marosvari", email="mdmarosvari@gmail.com" },
+]
+description = "A collection of functions to interact with Google APIs"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
