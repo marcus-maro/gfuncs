@@ -59,7 +59,12 @@ def service(api: str) -> Any:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file(PATH_CREDS, SCOPES)
+            try:
+                flow = InstalledAppFlow.from_client_secrets_file(PATH_CREDS, SCOPES)
+            except FileNotFoundError:
+                raise FileNotFoundError(
+                    f"Credentials file not found at {PATH_AUTH}. See https://developers.google.com/workspace/guides/create-project for instructions on how to create a credentials file."
+                )
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
         with open(PATH_TOKEN, "w") as token:
