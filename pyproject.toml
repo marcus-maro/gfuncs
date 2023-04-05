@@ -11,6 +11,11 @@ authors = [
 description = "A collection of functions to interact with Google APIs"
 readme = "README.md"
 requires-python = ">=3.8"
+dependencies = [
+  "google-api-python-client",
+  "google-auth-httplib2",
+  "google-auth-oauthlib",
+]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
