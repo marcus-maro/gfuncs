@@ -71,7 +71,7 @@ def service(api: str) -> Any:
             token.write(creds.to_json())
 
     # Generate and return service
-    return build(api, version, credentials=creds)
+    return build(api, version, credentials=creds, cache_discovery=False)
 
 
 def username() -> str:
