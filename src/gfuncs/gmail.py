@@ -14,7 +14,7 @@ def send_email(to="", subject="", body="") -> None:
 
     message = EmailMessage()
     message.set_content(body)
-    message["To"] = auth.username()
+    message["To"] = to
     message["Subject"] = subject
 
     # encoded message
